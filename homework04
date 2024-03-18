@@ -1,0 +1,245 @@
+Beetroot Academy
+QA Manual Course 
+Jan 2024 - March 2024
+Daniel Clapa
+Homework 04 for 2 Feb 2024, Lesson: Test Cases
+
+http://www.shino.de/parkcalc/
+TC number: 1 (Functional, negative test) 
+Title: 		Valid dates in both the Entry and Leaving date fields. <= NOT GOOD. CHANGE.
+Title: 		Error message for invalid date in either the Entry or the Leaving date fields.
+Description: 	Users should be required to select a valid date in both input date fields.
+Description: 	An error message should appear when a valid date is not selected in either the Entry or Leaving input date fields. 
+Preconditions, if any: An initial starting state of the web app where the Entry and Leaving dates have the date format, MM/DD/YYYY.
+Details: Steps with Expected result for each step
+1. Leave initial default selection of ‘Valet Parking’ in the Parking Lot field as-is. 
+→ Expected Result: Value ‘Valet Parking’ remains selected during all the next steps.
+2. Leave the date for the Entry date field with its initial invalid default date format, MM/DD/YYYY. 
+→ Expected Result: Initial invalid date format remains selected during all the next steps.
+3. Leave the date for the Leaving date field with its initial default date format, MM/DD/YYYY. 
+→ Expected Result: Initial invalid date format remains selected during all the next steps.
+4. Leave the hour and time type (AM/PM) with their default values for both the Entry and the Leaving rows. 
+→ Expected Result: These default values remain selected during all the next steps. 
+5. Press or click the Calculate button. 
+→ Expected Result: Error message should appear: “ERROR! ENTER A CORRECTLY FORMATTED DATE” to clearly describe the issue and how to rectify it.
+
+http://www.shino.de/parkcalc/
+TC number: 2 (Functional, negative test) 
+Title: 		Valid date in the Leaving date field is required.
+Title: 		
+Description: 	Users should be required to select a valid date in the input Leaving date field.
+Preconditions, if any: An initial starting state of the web app where the Entry and Leaving dates have the date format, MM/DD/YYYY.
+Details: Steps with Expected Result for each step
+1. Leave initial default selection of ‘Valet Parking’ in the Parking Lot field as-is. 
+→ ER: Value ‘Valet Parking’ remains selected throughout this whole operation (test case).
+2. Select any date for the Entry date field such as today’s date. 
+→ ER: Valid date remains selected throughout this whole operation (test case).
+3. Leave the date for the Leaving date field with its initial invalid default date format, MM/DD/YYYY. 
+→ ER: Initial date format remains selected throughout this whole operation (test case).
+4. Leave the hour and time type (AM/PM) with their default values for both the Entry and the Leaving rows. 
+→ ER: These default values remain selected during all the next steps.
+5. Press or click the Calculate button. 
+→ ER: An error message should appear clearly describing the issue and how to rectify it. 
+
+http://www.shino.de/parkcalc/
+TC number: 3 (Functional, negative test)
+Title: 		Entry date less than the Leaving date by 1 day.
+Title: 		
+Description: 	Users should be required to select an Entry date that is less than the Leaving date by 1 day.
+Preconditions, if any: none
+Details: Steps with Expected result for each step
+1. Leave initial default selection of ‘Valet Parking’ in the Parking Lot field as-is. 
+→ ER: Value ‘Valet Parking’ remains selected throughout this whole operation (test case).
+2. Select today’s date for the Entry date field. 
+→ ER: Today’s valid date remains selected during all the next steps.
+3. Select yesterday’s date for the Leaving date field. 
+→ ER: Yesterday’s valid date remains selected during all the next steps.
+4. Leave the hour and time type (AM/PM) with their default values for both the Entry and the Leaving rows. 
+→ ER: These default values remain selected during all the next steps.
+5. Press or click the Calculate button. 
+→ ER: An error message should appear clearly describing the issue and how to rectify it.
+
+http://www.shino.de/parkcalc/
+TC number: 4 (Functional, negative test)
+Title: 		Entry date is less than the Leaving date by 2 days.
+Description: 	Users should be required to select an Entry date that is less than the Leaving date by 2 days.
+Preconditions, if any: none
+Details: Steps with Expected result for each step
+1. Leave initial default selection of ‘Valet Parking’ in the Parking Lot field as-is. 
+→ ER: Value ‘Valet Parking’ remains selected throughout this whole operation (test case steps).
+2. Select today’s date for the Entry date field. 
+→ ER: Today’s valid date remains selected during all the next steps.
+3. For the Leaving date field select a date that is either from 2 days ago or more. 
+→ ER: Yesterday’s valid date remains selected during all the next steps.
+4. Leave the hour and time type (AM/PM) with their default values for both the Entry and the Leaving rows. 
+→ ER: These default values remain selected during all the next steps.
+5. Press or click the Calculate button. 
+→ ER: An error message should appear clearly describing the issue and how to rectify it.
+  
+TC number: 5
+Title: 		Entry date and time is equal to (or, same as) the Leaving date and time.
+Description: 	Users should be required to select at least a 1 minute time interval? 1 hour? between the hours and time types of the Entry and the Leaving fields, when these are the same.
+Preconditions, if any: 
+Details: Steps with Expected result for each step
+1. Select the Parking type to Valet Parking → ER: Value ‘Valet Parking’ remains selected (does not change) during all the next steps.
+2.  → ER: 
+3.  → ER: 
+Functional Positive Tests
+Besides the Boundary values, what would be some reasonable parking scenarios for an airport? These should probably be tested first and as Critical test cases.
+Specification with its Test parameters, Boundary values
+Valet Parking
+Valet
+$18 per day
+23 hours 59 minutes; 
+24 hours; 
+24 hours 1 minute
+$12 for five hours or less
+4 hours 59 minutes; 
+5 hours; 
+5 hours 1 minute
+
+TC number: x
+http://www.shino.de/parkcalc/
+Title: 		Parking cost for exactly 8 days in the Long-Term Surface Parking Lot
+Description: Calculate parking cost for 8 days in the Long-Term Surface Parking Lot
+Preconditions, if any: 
+Details: Steps with Expected result for each step
+1. Select the “Long-Term Surface Parking” value in the Parking Lot drop-down field. → ER: Value ‘Long-Term Surface Parking’ remains selected during all the next steps.
+2. In the Input Entry date calendar picker [see screenshot], select any either current or future.  → ER: Selected date does not change to another date during all the next steps.
+3. In the time field for the Input Entry section, manually type any time in the hour format of hh:mm (where “hh” is the hour typed as a number and “mm” is the minute typed as a number). → ER: Typed time in hh:mm format should not change to another time during all the next steps.
+4. In the time type (AM/PM) radio buttons for the Entry section, keep or select the AM value. → ER: The time type should remain the same during all the next steps.
+5. In the Leaving date calendar picker select a date 8 days from the one selected in the Entry date. → ER: Selected date does not change to another date during all the next steps.
+6. In the time field for the Leaving section, manually type the same time as the one in the Entry section. → ER: Typed time in hh:mm format does not change to another time during all the next steps.
+7. In the time type (AM/PM) radio buttons for the Leaving section, keep or select the AM value. → ER: The time type should remain the same during all the next steps.
+8. Press or click the Calculate button. → ER: The correct Parking cost should be calculated and displayed in the ESTIMATED PARKING COSTS field. 
+Actual result: While the parking cost was calculated correctly, the value (from Step 1) changed from “Long-Term Surface Parking” to the default value “Valet Parking”. 
+
+http://www.shino.de/parkcalc/
+TC number: x
+Title: 		PM value in time fields 
+Description: 	PM value in time fields should remain the same and not jump or change to AM even if the time would change correctly.
+Preconditions, if any: 
+Details: Steps with Expected result for each step
+1. Select any value in the Parking Lot drop-down field, such as ‘Valet Parking’ → ER: Value remains selected during all the next steps.
+2. From the Entry date calendar picker [see screenshot], select any either current or future by clicking on the Calendar icon.  → ER: Selected date does not change to another date during all the next steps.
+3. In the time field of the Entry section, type any valid time in the format “hh:mm” (where “hh” is the hour typed as a number and “mm” is the minute typed as a number). → ER: Value remains selected during all the next steps.
+4. In the time type (AM/PM) radio buttons for the Entry section, keep or select the AM value. → ER: The time type should remain the same during all the next steps.
+5. In the Leaving date calendar picker select any date (by clicking on the Calendar icon) 1 or more days from the one selected in the Entry date. → ER: Selected date does not change to another date during all the next steps.
+6. In the time field for the Leaving section, manually type “1:00”. → ER: Typed time “1:00” should not change to another time during all the next steps.
+7. In the time type (AM/PM) radio buttons for the Leaving section, select the PM value. → ER: The time type should remain the same during all the next steps. → AR (Actual Result): Fails here in this step. (Low priority test)
+8. Press or click the Calculate button. → ER: 
+Non-functional Tests
+GUI UX Usability Non-functional test: Date picker opens in a separate browser window. How could this be an issue? User can … ??? A Test Case does not always find an issue. Its goal is to test the software to check or confirm that an issue is not in it.
+TC number: x
+Title: 		Calendar month in the Entry date-calendar picker clearly shows all months of the year
+Description: 	In the “Input Entry” section, the month value in the date-calendar picker includes all 12 months of the year.
+Preconditions, if any: 
+Details: Steps with Expected result for each step
+1. Select any value in the Parking Lot drop-down field, such as ‘Valet Parking’ → ER: Value remains selected during all the next steps.
+2. In the “Input Entry” section click on the Calendar icon next to the date field.  → ER: The Calendar picker should appear and remain available until a date is selected.
+3. Expand the Calendar window by selecting a corner of it and dragging it to make it larger. → ER: Window should enlarge as high and wide as the screen size allows. REMOVE 
+4. Select the Drop-down button for the Month and view all months available. → ER: All 12 months of the year should be clearly visible: January, February, March, April, May, June, July, August, September, October, November, December.
+
+Title: 		Calendar month in the Entry date-calendar picker shows all months in order [Functional???]
+Description: 	In the “Input Entry” section the month value in the Calendar picker includes all 12 months of the year in order.
+
+4. Select the Drop-down button for the Month and view all months available. → ER: All 12 months of the year should be available in order from January to December. …
+
+Title: 		Calendar month in the Entry date-calendar picker is easily changed when selecting another month  
+Description: 	In the “Input Entry” section, the month value in the date-calendar picker can be easily changed to another month. [Maybe the word “can” shows functionality. “Can easily” could be a usability non-functional type.]
+4. Select the Drop down button for the Month and select another Month, such as December. → ER: The newly selected month should be changed and its monthly calendar should appear in the window. 
+
+Title: 		Another year in the Entry date-calendar picker is clearly displayed when selecting another year
+Description: In the “Input Entry” section the year value in the Calendar can be easily changed to another year by clicking on the forward button.
+
+4. Click on the forward “button” that looks like a “greater than or equal sign” next to year → ER: Calendar should jump from year to year keeping the same month.
+How would a tester determine “how” easy or “how” hard it would be for a user to change something in a GUI?
+
+http://www.shino.de/parkcalc/ 
+Title: 		
+Description: 	
+Preconditions, if any: 
+Details: Steps with Expected result for each step
+1.  → ER: 
+2.  → ER: 
+3.  → ER: 
+
+Security Non-functional test case: SQL Injection into at least one of the date fields. 
+Title: 		
+Description: 	
+Preconditions, if any: 
+Details: Steps with Expected result for each step
+1. Select any value in the Parking Lot drop-down field, such as ‘Valet Parking’ → ER: Value remains selected during all the next steps.
+2. In the Entry date calendar picker, select any either current or future by clicking on the Calendar icon and selecting the date.  → ER: Selected date does not change to another date during all the next steps.
+3. In the time field of the Entry section, type any valid time in the format “hh:mm” (where “hh” is the hour typed as a number and “mm” is the minute typed as a number). → ER: Value remains selected during all the next steps.
+4. In the time type (AM/PM) radio buttons for the Entry section, keep or select the AM value. → ER: The time type should remain the same during all the next steps.
+5. In the Leaving date calendar field box type a SQL injection code such as “txtUserId = getRequestString("UserId"); txtSQL = "SELECT * FROM Users WHERE UserId = " + txtUserId;” → ER: This value should be rejected by the application.
+6. Press or click the Calculate button. → ER: A major defensive error should be given by the web application.
+
+
+
+TASK 1: In TestRail
+1. Create 3 positive and 3 negative test cases in TestRail to check the basic functionality of your favorite online store (https://www.amazon.com/, https://www.mrporter.com/en-fr/, https://www.asos.com/ )
+2. Divide the cases in section by functionalities and sub-sections for positive and negative scenarios
+3. Create Test runs and mark the results
+Functional
+Positive - need 3
+1 Title: 		Search for pants products in the whole store
+Description: 	Search for pants products in the whole store for both women and men or unisex.
+Preconditions, if any: Enter the site at its home page https://www.asos.com/ in the neutral “zone”. 
+Details: Steps with Expected result for each step
+1. Click or tap into the search field. → ER: Cursor blinks in the search field waiting for the user to type a search command.
+2. Make a search command by typing “pants” → ER: Word “pants” is displayed in the search field with the cursor blinking at the end of the word.
+3. Click or tap the “Search” button → ER: Search function provides pants products for both women and men.
+
+2 Title: 		Search for shirt products in the Men store
+Description: 	Search for Men’s only “shirt” products in the Men section of the online store.
+Preconditions, if any: Enter the site at its home page https://www.asos.com/ in the neutral “zone”.
+Details: Steps with Expected result for each step
+1. Click or tap the “Men” tab or button → ER: Enter the “Men” online store with men’s products.
+2. Click or tap into the search field. → ER: Cursor blinks in the search field waiting for a user to type a search command.
+3. Make a search command by typing “shirt” → ER: Word “shirt” is displayed in the search field with the cursor blinking at the end of the word. 
+4. Click or tap the “Search” button. → ER: Search function provides shirt products for men only and [REMOVE: possibly unisex]. ???
+
+3 Title: 		Search for pants products in the Women store
+Description: 	Search for Women’s only pants products in the Women section of the online store.
+Preconditions, if any: Enter the site at its home page https://www.asos.com/ in the neutral “zone”.
+Details: Steps with Expected result for each step
+1. Click or tap the “Women” tab or button. → ER: Enter the “Women” store with women’s products.
+2. Click or tap into the search field. → ER: Cursor blinks in the search field waiting for a user to type a search command.
+3. Make a search command by typing “pants” → ER: Word “pants” is displayed in the search field with the cursor blinking at the end of the word. 
+4. Click or tap the “Search” button. → ER: Search function provides shirt products for women only.
+
+Negative - need 3 
+1 Title: 		Search for a non-existent product
+Description: 	Search for the non-existent product called “yyy”.
+Preconditions, if any: 
+Details: Steps with Expected result for each step
+1. Click or tap into the search field. → ER: Cursor blinks in the search field waiting for a user to type a search command.
+2. Make a search by typing “yyy” → ER: A notification appears telling the user there are no such products.
+
+2 Title: 		In the sign-up process the day and month 31 February not allowed
+Description: The non-existent day and month of 31 February is not allowed during the sign-up process.
+Preconditions, if any: 
+Details: Steps with Expected result for each step
+1. Click on the user icon. → ER: A drop-down menu appears with options to Sign-In, Join, My Account, My Orders, My Returns, Returns Information, and Contact Preferences appear.
+2. Click or tap on the Join link. → ER: A page with Join fields appears.
+3. Type a test email address such as “testmail@gmail.com”. → ER: Application accepts it with no pop-ups or messages telling the user this is an invalid email address.
+4. Type a test first name in the First name field, such as “Joe”. → ER: Application accepts it with no pop-ups or messages telling the user this is an invalid name.
+5. Type a test last name in the Last name field, such as “Smith”. → ER: Application accepts it with no pop-ups or messages telling the user this is an invalid name.
+6. Click on the Drop-down field for the day in the Date of Birth section and select 31. → ER:  Application accepts it.
+7. Click on the Drop-down field for the month in the Date of Birth section and select February. → ER: Application does not accept it and provides an error message to the user.
+
+3 Title: 		In the sign-up process the default invalid value YYYY gives an error
+Description: 	The invalid default value YYYY in the year field of the Date of Birth section of the sign-up process gives an error.
+Preconditions, if any: 
+Details: Steps with Expected result for each step
+1. Click on the user icon. → ER: A drop-down menu appears with options to Sign-In, Join, My Account, My Orders, My Returns, Returns Information, and Contact Preferences appear.
+2. Click or tap on the Join link. → ER: A web page with Join fields appears.
+3. Type a test email address such as “testmail@gmail.com”. → ER: Application accepts it with no pop-ups or messages telling the user this is an invalid email address.
+4. Type a test first name in the First name field, such as “Joe”. → ER: Application accepts it with no pop-ups or messages telling the user this is an invalid name.
+5. Type a test last name in the Last name field, such as “Smith”. → ER: Application accepts it with no pop-ups or messages telling the user this is an invalid name.
+6. Click on the Drop-down field for the day in the Date of Birth section and select 28. → ER:  Application accepts this value in the day field of the Date of Birth section.
+7. Click on the Drop-down field for the month in the Date of Birth section and select February. → ER: Application does not accept it and provides an error message.
+8. Leave the year Drop-down field with its default invalid value of YYYY. → ER: Application gives an error message and notifies the user to enter his or her full date of birth. 
+9. Click on or tap the Join ASOS button. → ER: Application gives an error message and notifies the user to enter his or her full date of birth. 
